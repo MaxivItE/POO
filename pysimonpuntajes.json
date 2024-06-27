@@ -1,0 +1,32 @@
+{
+    "__class__": "GestorJugadores",
+    "partidas": [
+        {
+            "__class__": "Jugador",
+            "__datos_partidas__": {
+                "nombre_jugador": "Sin_Nombre",
+                "fecha": "27/06/2024",
+                "hora": "14:26",
+                "puntaje": 2
+            }
+        },
+        {
+            "__class__": "Jugador",
+            "__datos_partidas__": {
+                "nombre_jugador": "Sin_Nombre",
+                "fecha": "27/06/2024",
+                "hora": "14:27",
+                "puntaje": 1
+            }
+        },
+        {
+            "__class__": "Jugador",
+            "__datos_partidas__": {
+                "nombre_jugador": "Sin_Nombre",
+                "fecha": "27/06/2024",
+                "hora": "14:28",
+                "puntaje": 0
+            }
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{% extends "base_template.html" %}
+
+{% block title %}Funcionalidades{% endblock %}
+
+{% block content %}
+<header>
+    <h1>MENU SISTEMA LOGIPACK</h1>
+</header>
+<body>
+    <div class = "container">
+        <ul>
+            <h2>Opciones</h2><br>
+            <a style = "width: 200;height: 30" href = "{{ url_for('registrar_paquete', id_sucursal = id_sucursal) }}"><strong>Registrar paquete</strong></a><br>
+            <a style = "width: 200;height: 30" href = "{{ url_for('salida_transporte', id_sucursal = id_sucursal) }}"><strong>Salida de transporte</strong></a><br>
+            <a style = "width: 200;height: 30" href = "{{ url_for('llegada_transporte', id_sucursal = id_sucursal) }}"><strong>Llegada de transporte</strong></a><br>
+            {% if mensaje %}
+            <h4><p style = "color: green;">{{ mensaje }}</p></h4>
+            {% endif %}
+        </ul>
+    </div>
+</body>
+{% endblock %}

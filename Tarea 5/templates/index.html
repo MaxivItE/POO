@@ -1,0 +1,24 @@
+{% extends "base_template.html" %}
+
+{% block title %}Despachante{% endblock %}
+
+{% block content %}
+<header>
+    <h1>SUCURSALES</h1>
+</header>
+    <body>
+        <div class="container">
+            <ul>
+                {% for sucursal in sucursales %}
+                    <li>
+                        <a href = "{{ url_for('despachante', id_sucursal = sucursal.id) }}"><strong>Sucursal {{ sucursal.id }}</strong></a><br>
+                        Número: {{ sucursal.numero }}<br>
+                        Provincia: {{ sucursal.provincia }}<br>
+                        Localidad: {{ sucursal.localidad }}<br>
+                    </li>
+                    <br>
+                {% endfor %}
+            </ul>
+        </div>
+    </body>
+{% endblock %}

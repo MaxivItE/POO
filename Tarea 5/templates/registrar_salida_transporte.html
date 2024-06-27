@@ -1,0 +1,28 @@
+{% extends "base_template.html" %}
+
+{% block title %}Salida de Transportes{% endblock %}
+
+{% block content %}
+<header>
+    <h1>Salida de Transportes</h1>
+</header>
+    <body>
+        <div class="container">
+            <form action="/registrar_transporte/{{ sucursal.id }}" method = "POST">
+                {% for paquete in paquetes %}
+                    {% if not paquete.entregado and paquete.idrepartidor == 0 and paquete.idtransporte == 0 %}
+                        <label>
+                            <input type="checkbox" name="paquetes_seleccionados" value="{{ paquete.id }}">
+                            Numero de envio: {{ paquete.numeroenvio }} | Direccion destinatario: {{ paquete.dirdestinatario }}
+                        </label><br>
+                    {% endif %}
+                {% endfor %}
+                {% if error_seleccion %}
+                <h4><p style = "color: rgba(251, 0, 0, 0.851)">{{ error_seleccion }}</p></h4>
+                {% endif %}
+                <input type="submit" value="Registrar transporte"/>
+            </form>
+        </div>
+    </body>
+
+{% endblock %}

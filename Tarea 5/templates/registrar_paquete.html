@@ -1,0 +1,24 @@
+{% extends "base_template.html" %}
+
+{% block title %}Registrar Paquete{% endblock %}
+
+{% block content %}
+<header>
+    <h1>Registrar Paquete</h1>
+</header>
+<body>
+    <div class="container">
+        <form action="{{request.path}}" method="post" class="container">
+        <label for = 'peso_paquete'>Peso de paquete</label><br>
+        <input type="text" name = 'peso_paquete' required/><br>
+        <label for = 'nombre_destinatario'>Nombre del destinatario</label><br>
+        <input type="text" name = 'nombre_destinatario' required/><br>
+        <label for = 'direccion_destinatario'>Direccion del destinatario</label><br>
+        <input type="text" name = 'direccion_destinatario' required/><br>
+        <br>
+        <input type="submit" value="Registrar"/>
+        </form>
+    </div>
+</body>
+
+{% endblock %}

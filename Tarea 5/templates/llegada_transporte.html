@@ -1,0 +1,29 @@
+{% extends "base_template.html" %}
+
+{% block title %}Registro de Transportes{% endblock %}
+
+{% block content %}
+<header>
+    <h1>Transportes sin llegada de la Sucursal</h1>
+</header>
+<body>
+    <div class = "container">
+        <form action = "/registrar_llegada_transporte/{{ sucursal.id }}" method = "POST">
+            {% for transporte in transportes %}
+                {% if transporte.fechahorallegada == 0 and transporte.idsucursal == sucursal.id %}
+                    <label>
+                        <input type = "checkbox" name = "transportes_seleccionados" value = "{{ transporte.id }}">
+                        Numero de transporte: {{ transporte.numerotransporte }} | Fecha y hora de salida: {{ transporte.fechahorasalida }}
+                    </label><br>
+                {% endif %}
+               
+            {% endfor %}
+            <input type="submit" value="Registrar llegada"/>
+        </form>
+        {% if error_seleccion %}
+        <h4><p style = "color: rgba(251, 0, 0, 0.851)">{{ error_seleccion }}</p></h4>
+        {% endif %}
+        <button><a href="{{ url_for('despachante', id_sucursal = sucursal.id) }}">Regresar</a></button> 
+    </div>
+</body>
+{% endblock %}
